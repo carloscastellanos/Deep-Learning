@@ -21,8 +21,9 @@ from tensorflow.keras import Model
 from tensorflow.keras.layers import BatchNormalization, Conv2D, \
     Input, ZeroPadding2D, LeakyReLU, UpSampling2D
 
-physical_devices = tf.config.experimental.list_physical_devices('GPU')
-tf.config.experimental.set_memory_growth(physical_devices[0], True)
+#physical_devices = tf.config.experimental.list_physical_devices('GPU')
+#tf.config.experimental.set_memory_growth(physical_devices[0], True)
+
 
 def parse_cfg(cfgfile):
     with open(cfgfile, 'r') as file:
@@ -156,12 +157,3 @@ def YOLOv3Net(cfgfile, model_size, num_classes):
     model = Model(input_image, out_pred)
     model.summary()
     return model
-
-
-
-
-
-
-
-
-
